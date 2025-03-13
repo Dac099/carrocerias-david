@@ -14,3 +14,9 @@ export type QuoteForm = {
   email?: string;
   description: string;
 };
+export type Client = {
+  name: string;
+  company: string;
+  phone: string;
+  email: string;
+};

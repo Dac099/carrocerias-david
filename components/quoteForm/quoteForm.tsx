@@ -3,7 +3,6 @@ import styles from './quoteForm.module.css';
 import Form from 'next/form';
 import { useState, useEffect } from 'react';
 import { Service } from '@/types/dashboard/types';
-import { generateQuote } from '@/actions/quote-generator';
 
 export function QuoteForm(){
   const [typeForm, setTypeForm] = useState<Service>();
@@ -23,7 +22,7 @@ export function QuoteForm(){
   }, [typeForm]);
 
   return (
-    <Form action={generateQuote} className={styles.form}>
+    <Form action={'/viewer'} className={styles.form}>
       <h4 className={styles.titleSection}>Tipo de cotización</h4>
       <section className={styles.typeSection}>
         <div className={styles.typeOption}>
