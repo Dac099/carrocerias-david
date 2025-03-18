@@ -3,6 +3,7 @@ import styles from './quoteForm.module.css';
 import Form from 'next/form';
 import { useState, useEffect } from 'react';
 import { Service } from '@/types/dashboard/types';
+import { saveQuote } from '@/actions/quote-generator';
 
 export function QuoteForm(){
   const [typeForm, setTypeForm] = useState<Service>();
@@ -10,7 +11,7 @@ export function QuoteForm(){
 
   useEffect(() => {
     switch(typeForm){
-      case 'article':
+      case 'product':
         setTitleQuote('Venta de producto');
         break;
       case 'service':
@@ -22,7 +23,7 @@ export function QuoteForm(){
   }, [typeForm]);
 
   return (
-    <Form action={'/viewer'} className={styles.form}>
+    <Form action={saveQuote} className={styles.form}>
       <h4 className={styles.titleSection}>Tipo de cotización</h4>
       <section className={styles.typeSection}>
         <div className={styles.typeOption}>
@@ -40,7 +41,7 @@ export function QuoteForm(){
             type="radio" 
             name="type" 
             id="article" 
-            value={'article'}
+            value={'product'}
             onChange={(e) => setTypeForm(e.target.value as Service)}
           />
           <label htmlFor="article">Producto</label>
@@ -79,7 +80,7 @@ export function QuoteForm(){
         <input type="date" name="deliveryDate" id="deliveryDate" />
       </section>
 
-      {typeForm === 'article' &&
+      {typeForm === 'product' &&
         <section className={styles.basicField}>
           <label htmlFor="product">Producto vendido</label>
           <input type="text" name="product" id="product" placeholder='Nombre del producto'/>

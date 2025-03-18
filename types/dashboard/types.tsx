@@ -1,7 +1,8 @@
-export type Service = 'service' | 'article' | 'truckbody';
+export type Service = 'service' | 'product' | 'truckbody';
 export type QuoteForm = {
   type: Service;
   price: string;
+  title: string;
   deliveryDate: string;
   product?: string;
   service?: string;
