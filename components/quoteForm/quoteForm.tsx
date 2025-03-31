@@ -66,18 +66,18 @@ export function QuoteForm(){
           name="title" 
           id="title"
           value={titleQuote}
-          disabled 
+          readOnly
         />
       </section>
 
       <section className={styles.basicField}>
         <label htmlFor="price">Precio</label>
-        <input type="number" name="price" id="price" min={0} step={0.0001}/>
+        <input type="number" name="price" id="price" min={0} step={0.0001} required/>
       </section>
 
       <section className={styles.basicField}>
         <label htmlFor="deliveryDate">Fecha aproximada de entrega</label>
-        <input type="date" name="deliveryDate" id="deliveryDate" />
+        <input type="date" name="deliveryDate" id="deliveryDate" required/>
       </section>
 
       {typeForm === 'product' &&
@@ -95,31 +95,38 @@ export function QuoteForm(){
       }
 
       {typeForm === 'truckbody' &&
-        <section className={styles.measureField}>
-          <div>
-            <label htmlFor="width">Ancho</label>
-            <input type="number" name="width" id="width" min={0} step={0.01}/>
-          </div>
-          <div>
-            <label htmlFor="height">Alto</label>
-            <input type="number" name="height" id="height" min={0} step={0.01}/>
-          </div>
-          <div>
-            <label htmlFor="length">Largo</label>
-            <input type="number" name="length" id="length" min={0} step={0.01}/>
-          </div>
-        </section>
+        <>
+          <section className={styles.basicField}>
+            <label htmlFor="bodyTruckName">Nombre de la carrocería</label>
+            <input type="text" name="bodyTruckName" id="bodyTruckName"/>
+          </section>
+
+          <section className={styles.measureField}>
+            <div>
+              <label htmlFor="width">Ancho</label>
+              <input type="number" name="width" id="width" min={0} step={0.01}/>
+            </div>
+            <div>
+              <label htmlFor="height">Alto</label>
+              <input type="number" name="height" id="height" min={0} step={0.01}/>
+            </div>
+            <div>
+              <label htmlFor="length">Largo</label>
+              <input type="number" name="length" id="length" min={0} step={0.01}/>
+            </div>
+          </section>
+        </>
       }
 
       <section className={styles.textField}>
         <label htmlFor="description">Descripción del trabajo</label>
-        <textarea name="description" id="description" rows={10}></textarea>
+        <textarea name="description" id="description" rows={10} required></textarea>
       </section>
 
       <h4 className={styles.titleSection}>Datos de cliente</h4>
       <section className={styles.basicField}>
         <label htmlFor="name">Nombre</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" required/>
       </section>
 
       <section className={styles.basicField}>
@@ -129,7 +136,7 @@ export function QuoteForm(){
 
       <section className={styles.basicField}>
         <label htmlFor="phone">Teléfono</label>
-        <input type="tel" name="phone" id="phone" />
+        <input type="tel" name="phone" id="phone" required/>
       </section>
 
       <section className={styles.basicField}>

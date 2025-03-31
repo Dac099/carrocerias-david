@@ -33,7 +33,7 @@ export const quotesTable = pgTable('quotes', {
 //Products table 
 export const productsTable = pgTable('products', {
   id: varchar({ length: 10 }).primaryKey(),
-  name: varchar({ length: 250 }),
+  name: varchar({ length: 250 }).unique(),
   price: numeric().notNull(),
   quoteId: varchar({ length: 10 }).references(() => quotesTable.id, { onDelete: 'set null'})
 });
@@ -41,7 +41,7 @@ export const productsTable = pgTable('products', {
 //Services table
 export const servicesTable = pgTable('services', {
   id: varchar({ length: 10 }).primaryKey(),
-  name: varchar({ length: 250 }),
+  name: varchar({ length: 250 }).unique(),
   quoteId: varchar({ length: 10 }).references(() => quotesTable.id, { onDelete: 'set null'})
 });
 

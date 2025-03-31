@@ -29,6 +29,13 @@
       "when": 1742274164581,
       "tag": "0003_ancient_kitty_pryde",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1743394495385,
+      "tag": "0004_natural_liz_osborn",
+      "breakpoints": true
     }
   ]
 }

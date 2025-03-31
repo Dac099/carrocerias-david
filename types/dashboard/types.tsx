@@ -9,9 +9,10 @@ export type QuoteForm = {
   width?: string;
   height?: string;
   length?: string;
+  bodyTruckName?: string;
   name: string;
   company?: string;
-  phone?: string;
+  phone: string;
   email?: string;
   description: string;
 };
