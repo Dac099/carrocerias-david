@@ -94,7 +94,7 @@ export async function saveQuote(formData: FormData){
   }
 
   if(quoteId){
-    redirect(`/dashboard/quote/${quoteId}`);
+    redirect(`/dashboard/quotes/${quoteId}`);
   }else{
     throw new Error('Ocurrió un error al insertar la cotización');
   }

@@ -1,4 +1,5 @@
 export type Service = 'service' | 'product' | 'truckbody';
+
 export type QuoteForm = {
   type: Service;
   price: string;
@@ -16,9 +17,19 @@ export type QuoteForm = {
   email?: string;
   description: string;
 };
+
 export type Client = {
   name: string;
   company: string;
   phone: string;
   email: string;
+};
+
+export type QuoteListItem = {
+  quoteId: string;
+  quoteType: string;
+  quoteName: string;
+  quotePrice: string;
+  createdAt: string | null;
+  clientName: string | null;
 };
