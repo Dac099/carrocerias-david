@@ -1,0 +1,45 @@
+.quoteCard
+{
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 2px 0px lightgray;
+  cursor: pointer;
+}
+
+.quoteHeading
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quoteName
+{
+  font-size: 1.3rem;
+}
+
+.createdDate
+{
+  font-style: italic;
+  color: rgb(110, 110, 110);
+}
+
+.quotePrice
+{
+  color: green;
+  font-size: 1.1rem;
+}
+
+.quotePrice span
+{
+  font-weight: bold;
+}
+
+.quoteData
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}

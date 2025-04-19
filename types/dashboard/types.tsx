@@ -33,3 +33,21 @@ export type QuoteListItem = {
   createdAt: string | null;
   clientName: string | null;
 };
+
+export type QuoteData = {
+  quoteId: string;
+  quoteDescription: string;
+  name: string;
+  price: string;
+  clientId: string;
+  clientName: string;
+  clientContact: string | undefined;
+  clientCompany: string | undefined;
+  quoteItemName: string; 
+  quoteItemId: string;
+  bodytruckSize?: {
+    width: number;
+    height: number;
+    length: number;
+  };
+};

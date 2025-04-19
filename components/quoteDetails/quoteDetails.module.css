@@ -1,0 +1,59 @@
+.mainContainer {
+  padding: 2rem;
+}
+
+.mainContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainContainer fieldset {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.mainContainer fieldset > div {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.mainContainer label {
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.mainContainer input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.mainContainer input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #0070f3;
+  color: white;
+}
+
+.controls button:hover {
+  background-color: #0051a2;
+}
