@@ -37,13 +37,14 @@ export type QuoteListItem = {
 export type QuoteData = {
   quoteId: string;
   quoteDescription: string;
+  createdAt: string;
   name: string;
   price: string;
   clientId: string;
   clientName: string;
   clientContact: string | undefined;
   clientCompany: string | undefined;
-  quoteItemName: string; 
+  quoteItemName: string;
   quoteItemId: string;
   bodytruckSize?: {
     width: number;

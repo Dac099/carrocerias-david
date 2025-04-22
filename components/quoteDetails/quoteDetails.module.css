@@ -42,10 +42,11 @@
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
-  margin-top: 2rem;
+  margin: 0 auto 1rem auto;
+  max-width: 300px;
 }
 
-.controls button {
+.controls button, .controls a {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -56,4 +57,35 @@
 
 .controls button:hover {
   background-color: #0051a2;
+}
+
+/* Add responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 1rem;
+  }
+  
+  .mainContainer fieldset > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mainContainer label {
+    min-width: auto;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .mainContainer input {
+    width: 100%;
+  }
+  
+  .controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .controls button {
+    width: 100%;
+  }
 }

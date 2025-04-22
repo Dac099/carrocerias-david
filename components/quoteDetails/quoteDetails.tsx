@@ -3,13 +3,14 @@
 import styles from "./quoteDetails.module.css";
 import { QuoteData } from "@/types/dashboard/types";
 import { useState } from "react";
+import { updateQuoteById } from '@/actions/quotes';
+import PDFDownloadButton from '../quoteDocument/quoteDocument';
 
 type Props = {
   quoteData: QuoteData;
-  quoteId: string;
 };
 
-export function QuoteDetails({ quoteData, quoteId }: Props) {
+export function QuoteDetails({ quoteData }: Props) {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState(quoteData);
 
@@ -23,8 +24,7 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
 
   const handleSubmit = async () => {
     try {
-      // Call server action here
-      // await updateQuoteById(quoteId, formData);
+      await updateQuoteById(formData);
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating quote:", error);
@@ -49,6 +49,7 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
               name="clientId"
               value={formData.clientId}
               onChange={handleInputChange}
+              disabled={true}
             />
           </div>
           <div>
@@ -93,7 +94,7 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
               name="quoteId"
               value={formData.quoteId}
               onChange={handleInputChange}
-              readOnly
+              disabled={true}
             />
           </div>
           <div>
@@ -126,6 +127,16 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
               onChange={handleInputChange}
             />
           </div>
+          <div>
+            <label htmlFor="createdAt">Fecha de creación</label>
+            <input
+              type="date"
+              id="createdAt"
+              name="createdAt"
+              value={formData.createdAt || ""}
+              disabled={true}
+            />
+          </div>
         </fieldset>
 
         <fieldset disabled={!isEditing}>
@@ -138,6 +149,7 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
               name="quoteItemId"
               value={formData.quoteItemId}
               onChange={handleInputChange}
+              disabled={true}
             />
           </div>
           <div>
@@ -194,12 +206,8 @@ export function QuoteDetails({ quoteData, quoteId }: Props) {
             </button>
           )}
           {isEditing && <button type="submit">Guardar</button>}
-          <button
-            type="button"
-            onClick={() => (window.location.href = `${quoteId}/pdf`)}
-          >
-            Descargar
-          </button>
+          {isEditing && <button type="button" onClick={() => setIsEditing(false)}>Cancelar</button>}
+          {!isEditing && <PDFDownloadButton quoteData={quoteData} />}
         </section>
       </form>
     </article>
