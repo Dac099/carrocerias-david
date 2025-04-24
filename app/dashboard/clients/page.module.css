@@ -1,0 +1,46 @@
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  max-width: 700px; /* Set maximum width for the container */
+  gap: 15px; /* Add some space between the client cards */
+  margin: 0 auto; /* Center the container if the viewport is wider than max-width */
+  justify-content: center; /* Center items horizontally if there's extra space on a line */
+}
+
+.clientCard {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.2);
+  padding: 5px;
+  flex-basis: 300px; 
+  flex-grow: 1; 
+  flex-shrink: 0; 
+}
+
+.icon {
+  display: block;
+  text-align: center;
+  color: royalblue;
+}
+
+.clientTable {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%; 
+}
+
+.tableRow th {
+  text-align: left;
+  padding-right: 10px;
+}
+
+.tableRow td {
+  padding-left: 15px; 
+}
+
+
+.clientTable th, .clientTable td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  vertical-align: top; 
+}

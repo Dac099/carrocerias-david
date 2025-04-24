@@ -52,3 +52,11 @@ export type QuoteData = {
     length: number;
   };
 };
+
+export type ClientDataCard = {
+  clientId: string;
+  clientName: string;
+  clientContact: string;
+  totalQuotes: number;
+  createdAt: string;
+};

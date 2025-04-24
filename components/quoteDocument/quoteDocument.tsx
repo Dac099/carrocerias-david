@@ -232,7 +232,7 @@ const QuoteDocument = ({ quoteData }: { quoteData: QuoteData }) => (
       <View style={styles.footer}>
         <Text style={styles.footerText}>Cto. Ext. Metropolitano (20 de Noviembre) frente a micheladas</Text>
         <Text style={styles.footerText}>El Consentido de la Frontera. Col. Agrícola Lázaro Cárdenas, Metepec, Méx.</Text>
-        <Text style={styles.footerText}>Contacto: 722 598 9614 | @*carrocerías_*david</Text>
+        <Text style={styles.footerText}>Contacto: 722 598 9614 | @carrocerías_david</Text>
       </View>
     </Page>
   </Document>
