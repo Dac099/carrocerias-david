@@ -1,0 +1,26 @@
+.navbar {
+  font-family: var(--text-font);
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
+
+.listNav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.listNav a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--accent-color);
+  background-color: var(--dark-color);
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
+  flex-shrink: 1;
+}
