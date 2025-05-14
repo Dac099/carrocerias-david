@@ -1,26 +1,37 @@
-.navbar {
-  font-family: var(--text-font);
-  font-weight: 600;
-  width: 100%;
+.header {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.listNav {
+.header_title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.sideBar :global(.p-sidebar-header){
+  padding: 5px 10px;
+}
+
+.sideBar :global(.p-sidebar-content){
+  padding: 0;
+}
+
+.sidebar_list{
+  list-style: none;
+  padding: 0 5px;
+}
+
+.sidebar_list a{
   display: flex;
-  flex-wrap: nowrap;
+  align-items: center;
   gap: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.listNav a {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  color: var(--accent-color);
-  background-color: var(--dark-color);
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+  margin: 5px 0;
+  background-color: rgba(197, 207, 243, 0.521);
   padding: 5px;
-  border-radius: 3px;
-  box-shadow: 2px 2px 0px 0px var(--accent-color);
-  flex-shrink: 1;
+  border-radius: 5px;
+  cursor: pointer;
 }

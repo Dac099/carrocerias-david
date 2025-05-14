@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Raleway, Outfit } from 'next/font/google';
+import { PrimeReactProvider } from 'primereact/api';
+import 'primereact/resources/themes/lara-light-indigo/theme.css'; 
+import 'primeicons/primeicons.css'
 
 export const metadata: Metadata = {
   title: "Carrocerías David",
@@ -27,10 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${raleway.variable} ${outfit.variable}`}>
-      <body>
-        {children}
-      </body>
-    </html>
+    <PrimeReactProvider>
+      <html lang="es" className={`${raleway.variable} ${outfit.variable}`}>
+        <body>
+          {children}
+        </body>
+      </html>
+    </PrimeReactProvider>
   );
 }
